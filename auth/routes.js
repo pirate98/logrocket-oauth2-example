@@ -1,6 +1,7 @@
 module.exports = (router, app, authenticator) => {
   router.post("/register", authenticator.registerUser);
-  router.post("/login", app.oauth.grant(), authenticator.login);
+  // calling Experss oauth.granth() to make sure this user is logged in properly
+  router.post("/login", app.oauth.grant(), authenticator.login); 
 
   return router;
 };
